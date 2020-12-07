@@ -112,10 +112,10 @@
       switch ($m) {
         case "1": echo $msg_agotado1;
                   break;
-        case "2": echo $msg_agotado2
+        case "2": echo $msg_agotado2;
                   break;
       }
-      
+
     }
 
   ?>
