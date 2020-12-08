@@ -72,31 +72,33 @@
     <tbody>
     <?php
       require_once "model/data.php";
-      error_reporting(0);
+      // error_reporting(0);
       $d = new Data();
       $productos = $d->getProductos();
       $cont = 0;
+      $cuerpo_tabla = "";
       foreach ($productos as $p) {
-        echo "<tr>";
-        echo "<td>.$p->id.</td>";
-        echo "<td>.$p->nombre.</td>";
-        echo "<td>.$p->precio.</td>";
-        echo "<td>.$p->stock.</td>";
-        echo "<td>";
         //echo "<form action='controller/agregar.php' method='post' id='formulario'>";
-        echo "<form   method='POST' id='formulario'>";
-        echo "<input type='hidden' name='txtID" . $cont . "'      id='id" . $cont . "' value='" . $p->id . "'>";
-        echo "<input type='hidden' name='txtnombre" . $cont . "'   id='nombre" . $cont . "'   value='" . $p->nombre . "'>";
-        echo "<input type='hidden' name='txtprecio" . $cont . "'   id='precio" . $cont . "'  value='" . $p->precio . "'>";
-        echo "<input type='hidden' name='txtstock" . $cont . "'       id='stock" . $cont . "'  value='" . $p->stock . "'>";
-        echo "<input type='number' name='txtcantidad" . $cont . "'     id='cantidad" . $cont . "'   step='0.1' min='0' >";
-        echo "<button  type='button' id='btn_generar" . $cont . "'   onclick='agregar(" . $cont . ")'   class='btn btn-primary'> Añadir </button>";
-        echo "<a href=''><input type='button' name='btneditar' id='' value='editar' ></a>";
-        echo "</form>";
-        echo "</td>";
-        echo "</tr>";
+        $cuerpo_tabla .= "\t\t<tr>\n".
+                            "\t\t\t<td>$p->id</td>\n".
+                            "\t\t\t<td>$p->nombre</td>\n".
+                            "\t\t\t<td>$p->precio</td>\n".
+                            "\t\t\t<td>$p->stock</td>\n".
+                            "\t\t\t<td>\n".
+                            "\t\t\t\t<form   method='POST' id='formulario'>\n".
+                            "\t\t\t\t<input type='hidden' name='txtID" . $cont . "'      id='id" . $cont . "' value='" . $p->id . "'>\n".
+                            "\t\t\t\t<input type='hidden' name='txtnombre" . $cont . "'   id='nombre" . $cont . "'   value='" . $p->nombre . "'>\n".
+                            "\t\t\t\t<input type='hidden' name='txtprecio" . $cont . "'   id='precio" . $cont . "'  value='" . $p->precio . "'>\n".
+                            "\t\t\t\t<input type='hidden' name='txtstock" . $cont . "'       id='stock" . $cont . "'  value='" . $p->stock . "'>\n".
+                            "\t\t\t\t<input type='number' name='txtcantidad" . $cont . "'     id='cantidad" . $cont . "'   step='0.1' min='0' >\n".
+                            "\t\t\t\t<button  type='button' id='btn_generar" . $cont . "'   onclick='agregar(" . $cont . ")'   class='btn btn-primary'> Añadir </button>\n".
+                            "\t\t\t\t<a href=''><input type='button' name='btneditar' id='' value='editar' ></a>\n".
+                            "\t\t\t\t</form>\n".
+                            "\t\t\t</td>\n".
+                            "\t\t</tr>\n\n";
+        echo $cuerpo_tabla;
+        $cont++;
      }
-     $cont++;
     ?>
     </tbody>
   </table>
