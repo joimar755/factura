@@ -77,7 +77,7 @@
       $productos = $d->getProductos();
       $cont = 0;
       $cuerpo_tabla = "";
-      foreach ($productos as $p) {
+      foreach ($productos as &$p) {
         //echo "<form action='controller/agregar.php' method='post' id='formulario'>";
         $cuerpo_tabla .= "\t\t<tr>\n".
                             "\t\t\t<td>$p->id</td>\n".
@@ -96,9 +96,9 @@
                             "\t\t\t\t</form>\n".
                             "\t\t\t</td>\n".
                             "\t\t</tr>\n\n";
-        echo $cuerpo_tabla;
         $cont++;
      }
+     echo $cuerpo_tabla;
     ?>
     </tbody>
   </table>
