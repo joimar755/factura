@@ -1,11 +1,11 @@
 
   var tabla = document.getElementById('cuerpoTabla');
   var items = [];
+  
+  
 
-
-
-
-
+  
+   
   function agregar(carrito) {
 
   var id = $("#id"    + carrito).val();
@@ -13,8 +13,13 @@
   var precio = $("#precio"  + carrito).val();
   var stock = $("#stock"  + carrito).val();
   var cantidad  = $("#cantidad"  + carrito).val();
-
+   
   var subtotal = parseFloat(precio) * parseFloat(cantidad);
+  
+ 
+  
+     
+
 
 
 
@@ -35,7 +40,8 @@
         "cantidad" : cantidad,
         "subtotal" : subtotal
 
-     }
+     } 
+    
      items.push(json_carrito);
 
      console.log(items);
@@ -73,12 +79,12 @@ function cargarTabla() {
    elemento.innerHTML += ("<td>"+items[i].nombre+"</td>");
    elemento.innerHTML += ("<td>"+items[i].precio+"</td>");
    elemento.innerHTML += ("<td>"+items[i].stock+"</td>");
-   elemento.innerHTML += ("<td>"+items[i].cantidad+"</td>");
+   elemento.innerHTML += ("<td>"+items[i].cantidad+"</td>"); 
    elemento.innerHTML += ("<td>"+items[i].subtotal+"</td>");
-   elemento.innerHTML += ("<button class='btn btn-danger'> <i class='fas fa-trash'></i> Eliminar</button>");
-
+   elemento.innerHTML += ("<button class='btn btn-danger'> <i class='fas fa-trash'></i>Eliminar</button>");
+    
    tabla.appendChild(elemento);
-
+   
 
  }
 

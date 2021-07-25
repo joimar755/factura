@@ -12,7 +12,7 @@
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
-
+ 
   <script>
     $(document).ready(function() {
       /* ..:: DataTable ::.. */
@@ -92,7 +92,7 @@
                             "\t\t\t\t<input type='hidden' name='txtprecio" . $cont . "'   id='precio" . $cont . "'  value='" . $p->precio . "'>\n".
                             "\t\t\t\t<input type='hidden' name='txtstock" . $cont . "'       id='stock" . $cont . "'  value='" . $p->stock . "'>\n".
                             "\t\t\t\t<input type='number' name='txtcantidad" . $cont . "'     id='cantidad" . $cont . "'   step='0.1' min='0' >\n".
-                            "\t\t\t\t<button  type='button' id='btn_generar" . $cont . "'   onclick='agregar(" . $cont . ")'   class='btn btn-primary'> <i class='fas fa-plus'></i> Añadir </button>\n".
+                            "\t\t\t\t<button  type='button' " . $cont . "'   onclick='agregar(" . $cont . ")'   class='btn btn-primary'> <i class='fas fa-plus'></i> Añadir </button>\n".
                             "\t\t\t\t<a href=''><input type='button' name='btneditar' id='' value='editar' ></a>\n".
                             "\t\t\t\t</form>\n".
                             "\t\t\t</td>\n".
@@ -123,16 +123,18 @@
 
   ?>
 
+
+<p id="contador" ></p>
   <h1>listado de compra</h1>
   <div>
     <table class="table table-dark">
 
       <tbody id="cuerpoTabla">
-
+          
       </tbody>
-
+     
     </table>
-
+   
   </div>
 </body>
 <script src="agregar.js"></script>
