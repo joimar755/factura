@@ -106,22 +106,7 @@
 
   <!-- ..:: Listado de Ventas ::.. -->
   <a href="vista/ventas.php">listado de ventas</a>
-  <?php
-    $msg_agotado1 = "<script> alert('el producto esta agotado'); window.location= 'index.php'; </script>";
-    $msg_agotado2 = "<script> alert('el producto esta agotado'); window.location= 'index.php'; </script>";
-
-    if (isset($_GET["m"])) {
-      $m = $_GET["m"];
-      switch ($m) {
-        case "1": echo $msg_agotado1;
-                  break;
-        case "2": echo $msg_agotado2;
-                  break;
-      }
-
-    }
-
-  ?>
+    
 
 
 <p id="contador" ></p>
