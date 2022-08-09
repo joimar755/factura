@@ -15,7 +15,7 @@
   
   var subtotal = parseFloat(precio) * parseInt(cantidad);
      
-    //hola
+    
     if (cantidad == '') {
       alert("ingrese un numero");
     } else if (cantidad > stock ) {
